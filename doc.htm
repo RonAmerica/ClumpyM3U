@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang=en>
+<head>
+<title>Documentation for Clumpy, the Clumpy Playlist Maker</title>
+
+<meta charset=utf-8>
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+
+<meta name=description content="Make your playlists more clumpy with The King of Clump!">
+
+<style>
+
+body{background-color:black;color:white;font:16pt sans-serif;margin:0 2vw}
+td{padding-right:1vw}
+.tiny{font:10pt arial}
+h1,h2,h3{margin-bottom:0}
+p{margin-top:0}
+a{color:aqua;text-decoration:none}
+a:hover{color:white;text-decoration:underline}
+
+</style>
+</head>
+<body>
+
+<h1>Clumpy</h1>
+
+<p>Clumpy is designed to make new m3u playlists to clump together the songs that share words in their filenames. Make your playlists more clumpy with The King of Clump!
+
+<p>Clumpy needs a pre-existing playlist to use as input. You can create one using a command line like this on Linux:
+
+<p>
+<code>
+ls *.mp3 *.ogg *.wav *.webm *.m4a *.flac 2&gt;/dev/null | sort -R &gt; playlist.m3u
+</code>
+
+<p>That creates a shuffled playlist of audio files in the current directory, so cd to the appropriate folder first.
+
+<p>The sorting of the input playlist doesn't matter much to Clumpy because by default, it shuffles the order of loaded songs before starting for the purpose of avoiding having recurring order of songs in the output playlists that are generated.
+
+<p>One problem with clumping is that all songs by the same artist tend to be clumped together if the artist is in the filename. And songs will tend to clump in much the same way again and again, probably not good for any station or stream. To reduce that, simply run for less time to result in less clumping, retaining some of the randomness in the ordering.
+
+<p>Please note that you might need to disable shuffling in your media player in order to notice clumping in the playlists. With VLC, there is a button at the bottom with crossed arrows, or avoid using the -Z option for cvlc.
+
+<p>The program overwrites any old playlist with the same name as the output file.
+
+<p>Clumpy is tiny, free, and open source.
+
+
+<h2>Command Line Options</h2>
+
+<table>
+<tr><td>-i</td><td>infile</td></tr>
+<tr><td>-o</td><td>outfile</td></tr>
+<tr><td>-t</td><td>time in seconds to run, default 10, more=clumpier</td></tr>
+<tr><td>-r</td><td>shuffle amount, default 8, prevents recurring order</td></tr>
+<tr><td>-ml</td><td>low number of mutations, default 1</td></tr>
+<tr><td>-mh</td><td>high number of mutations, default 2</td></tr>
+<tr><td>-b</td><td>buffer size, default 1024, increase for longer names</td></tr>
+<tr><td>-v</td><td>verbosity, 0 or 1</td></tr>
+<tr><td>-h</td><td>show this help</td></tr>
+</table>
+
+
+<div class=tiny>
+
+<h2>Known Issues</h2>
+
+<p>Using stdin and stdout for loading or outputting may not work yet.
+
+</div>
+
+<h2>About</h2>
+
+<p>This is based on an idea I had around 2019, and I finally took the time to make it happen in December of 2023.
+
+<p>It's another creation of W R "Ron" Spain Jr from North Carolina.
+
+
+<h2>See Also</h2>
+<p><a href=http://github.com/RonAmerica/Clumpy>Clumpy Project Home</a>
+
+</body>
+</html>
